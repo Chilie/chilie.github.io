@@ -1,0 +1,82 @@
+---
+layout: post
+title:  "Markdown 使用记录"
+date:   2018-10-12 18:00:00
+categories: Thriller Comedy Horror
+---
+
+# 导言
+这是为了练习使用*Markdown*的语法的练习文本，首先是标题的练习，不同的标题是不一样的
+## 级列标题
+此处为一个二级标题，测试不同标题的写法
+## 强调的使用
+在Markdown里可以使用的不同强调类型有
+* 斜体
+> 用星号'*',下划线'_'来表示斜体，*斜体1* 和 _斜体2_
+* 粗体
+> 用两个星号和下划线表示粗体，如**粗体1**和__粗体2__
+* 斜体＋粗体
+> 混合前面的两种符号，如**_两种效果_**
+* 错误划掉
+> 想显示错误划线的效果，需要使用两个波浪线，如~~划掉~~
+
+## 列表的使用
+在Markdown里使用列表也是很容易的，直接就是用'*','+','-'来引导就可以了，例如
+* 酒店数据
+* PMS数据
+* 用户消费行为数据
+
+## 链接的使用
+在Markdown里使用链接有两种方式，即
+- 内联式
+- 外部式
+从下面的一个例子可以看出，引用的方法：
++ 这些搜索结果来源于[Google](http://www.google.com "这是Google")
++ 这些结果来源于知网学术搜索 [中国知网](http://www.cnki.net)
+
+## 插入图片
+插入的图片既可以是本地的，也可以是远程的，其链接格式跟网页链接是相似的，唯一的区别是前面加上感叹号来区分,如
+这是我的照片
+![我的照片](DSC_0728.jpg)
+
+## 如何插入代码块
+代码块在网页上的技术文档使用很频繁的是代码块，代码块的使用需要在首段跳四个空格键或者一个制表符，即可以开始写代码了，如下面展示的*Python*代码：
+    #这是python代码
+    #此处定义了一个函数
+    def max(a,b):
+        return a if a>=b else b
+## 插入引用
+在网页中引用大段文字，如何来实现呢，在Markdown里书写起来也很流畅，其格式借鉴了邮件引用的相关方法，用符号'>'开头
+> 这是一段引用，看看其引用的效果
+
+
+<figure>
+<img src="http://img08.oneniceapp.com/upload/show/2016/01/06/e27745eebd6166ff6238ad5bb007ae78.jpg-show.n640.jpg" />
+<figcaption> 我的照片 </figcaption>
+</figure>
+
+You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
+To add new posts, simply add a file in the `_posts` directory that follows the convention: YYYY-MM-DD-name-of-post.ext.
+
+## 插入*LaTeX*数学公式
+在博客中加入数学公式是一件容易的事情，直接就相当于你在书写数学论文一样就好了，如
+> 这里是数学公式　$a^2+b^2=c^2$ (勾股定理)
+> 如何逃逸出数学公式的解析呢？使用liquid的 {% raw %} {% endraw %}
+
+{%raw %}
+$a^2=b^2=c^2$
+{%endraw %}
+Jekyll also offers powerful support for code snippets:
+
+{% highlight ruby %}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
+{% endhighlight %}
+
+Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll's GitHub repo][jekyll-gh].
+
+[jekyll-gh]: https://github.com/mojombo/jekyll
+[jekyll]:    http://jekyllrb.com
