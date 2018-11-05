@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "UBUNTU使用"
+date:   2018-10-12 18:00:00
+categories: ubuntu linux 
+---
+
+# ssh与scp混合使用
+在Linux中，通常使用ssh来远程登录服务器时，也同时需要本地客户端和远程服务器之间传递文件，而这时需要用scp来传递文件，而这通常使用起来不是很方便：
++ 需要`Ctrl`+`Alt`＋｀T｀重新打开一个终端，来使用scp命令
++ 使用scp时需要重新输入密码
+这会让人觉得很是繁琐。这个问题的讨论可以在[Exchange](https://unix.stackexchange.com/questions/106480/how-to-copy-files-from-one-machine-to-another-using-ssh )上看到。
+ 
+在文章中推荐使用图形化的解决方案，就是把远程服务器挂载到本地路径，需要安装软件包**sshfs**，常用的命令有:
++ 挂载
+> sudo sshfs root@remote:/dir/ /mnt # 把远程目录挂载到/mnt
++ 图形界面打开
+> sudo nautilus # 超级用户打开
++ 卸载
+> fusermount /mnt # 弹出挂载
