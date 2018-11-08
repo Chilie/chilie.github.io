@@ -1,0 +1,132 @@
+---
+layout: post
+title:  "UBUNTU在X1 Carbon 2018上安装"
+date:   2018-10-12 18:00:00
+categories: ubuntu linux 
+---
+
+# 在Thinkpad X1　Carbon上安装Ubuntu 18.04 的方法和调整
+## 缘起
+之所以会有这篇日志，是因为看中了这个电脑的极致便携性，其预装了Windows 10的家庭版，我想安装一个Ubuntu和Windows的双系统，所以在网上研究了下这款电脑对Ubuntu的支持力度。还是发现了有些支持不足，但所幸的是，网上对于这些问题都有了对应的解决方案。顺便把我在网上看到的以及安装Ubuntu的整个过程总结整理如下，希望对后面的人或者自己以后重装系统有一定的参考价值。
+
+## 常见的硬件兼容问题
++ 休眠模式耗电问题/电脑续航问题
++ 触控板以及Trackpoint失灵问题
++ CPU 降频 (CPU is throttled)
++ 安装系统引导问题 (UEFI v.s. Lagacy)
+
+### 触控板失灵和电池续航问题
+
+#### 触控板失灵解决方法
++ 注释掉文件` /etc/modprobe.d/blacklist.conf`里的`i2c_i801`行
++ 在文件`/etc/default/grub` 中修改行
+　　　> GRUB_CMDLINE_LINUX_DEFAULT="quiet splash psmouse.synaptics_intertouch=1"
++ 保存文件，然后执行
+　　　> sudo update-grub
++ 有时系统在唤醒时，触控板还是失灵的，则需要在每次唤醒时执行脚本，且复制脚本至
+　　　`/lib/systemd/system-sleep/resume-x1-fix.sh`类似的之类的文件夹下。
+这两个问题据说已经被解决了，在[这里](https://blog.pedropombeiro.com/running-ubuntu-18-04-on-a-thinkpad-x1-carbon-6th-gen/)提到：
+> The first two problems (no confirmation on 3rd problem) seem to be fixed in 1.30 BIOS update. Disabling Secure Boot, and enabling Thunderbolt BIOS Assist Mode is no longer necessary. Woohoo!
+所以在安装Ubuntu之前需要首先确定你电脑的BIOS版本，这可以在Windows系统下查看，也可以在电脑启动时进入BIOS直接查看。但这个fix没有被验证，且[官网](https://download.lenovo.com/pccbbs/mobiles/n23ur11w.txt)仅仅只是说fix这个电源管理，所以还是需要tweaks的。我们的**策略**是，**先安装Ubuntu系统，试用一下，发现问题再进行更新即可**。
+
+查看方法：
+在Windows 10　下，点击`Win`+`R`键，输入`msinfo32`即可在<系统信息>里看到电脑的BIOS信息，如笔者的信息为:
+>  + 电脑型号: 20KH0009CD
+>  + BIOS　版本/日期: LENOVO N23ET55W (1.30), 2018/8/31
+>  + SMBIOS版本: 3.0
+>  + BIOS模式: UEFI
+由此看来我的电脑不需要网上的tweaks了。对于有需要的可以参考上面链接的方法自行进行打补丁，还有一种方法可以直接先升级 BIOS版本。关于BIOS 1.30版本的更新说明参见[这里](https://download.lenovo.com/pccbbs/mobiles/n23ur11w.txt)
+#### Linux上更新BIOS的方法
++ 自动方法 (LVFS, Linux Vendor Firmware Service)
+> sudo fwupdmgr update
+关于这个命令的使用以及用USB更新BIOS的参考，见[这里](https://www.daveeddy.com/2018/09/09/thinkpad-x1-carbon-gen-6-bios-update/)
+
++ 手动方法
+    - 先去联想官网下载最新的BIOS，下载[最新驱动](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-carbon-6th-gen-type-20kh-20kg/downloads)
+    - 获取 geteltorito 软件，然后执行
+    　 > geteltorito.pl -o bios-update.img n23ur12w.iso
+    　 > sudo dd if=<image>.img of=<destination> bs=512K
+ 发现一个好玩的可以定制启动界面的地方
+ > ThinkPad X1 Carbon supports setting a custom splash image at the earliest boot stage (instead of the red "Lenovo" logo), more information can be found in the README.TXT located in the FLASH folder of the update image.
+
+#### 如何检查S3睡眠模式是否工作
+之所以有这个问题，是联想BIOS移出了对S3模式支持，而使用了对现代Windows的S0i3(Windows Modern Standby)的支持。为了验证BIOS 1.30版本是否恢复了S3的支持，可以使用如下代码来验证:
+>  dmesg | grep ACPI |grep supports
+你如果看到了如下的返回，则说明S3已经被支持了:
+> [    0.288032] ACPI: (supports S0 S3 S4 S5)
+
+现在CPU更多的睡眠模式，但是Linux内核对于Core的S0i3不是支持的，但据说现在支持Atom的架构，见[这里](https://www.dpin.de/nf/finally-s0i3-is-there-thinkpad-tablet-10-sleeps-deeply-with-linux-kernel-4-15rc/)
+
+如果没有看见S3的话，则需要打补丁，参见[网页](https://delta-xi.net/#056)，方法如下：
+1. 重启电脑，进入BIOS，确保 *Config - Thunderbolt (TM) 3 - Thunerbolt BIOS Assist Mode* Enabled，以及*Security - Secure Boot* Disabled。
+**注意**：*Thunerbolt BIOS Assist Mode* 对于Linux 必须开启，对于*Secure Boot*是否开启，可以通过以下输出来验证：
+　> dmesg | grep -A3 'DSDT ACPI'
+　如果有三行，且有block字样的话，需要disabled.
+2. 安装Intel ACPI机器语言编译器 *iasl* (via acpica)以及*cpio* (via cpio)
+3. 获取现有ACPI DSDT　表:
+       > sudo cat /sys/firmware/acpi/tables/DSDT > dsdt.aml
+4.  反编译dsdt.aml文件得到 `.dsl`源文件
+       > iasl -d dsdt.aml
+5. 对dsdt.dsl 文件打补丁，补丁文件在这，[patch](https://delta-xi.net/download/X1C6_S3_DSDT.patch)
+	> patch --verbose < X1C6_S3_DSDT.patch
+6. 注意确保替换的文件里的'DefinitionBlock ("", "DSDT", 2, "LENOVO", "SKL     ", 0x00000000)' 改成了'DefinitionBlock ("", "DSDT", 2, "LENOVO", "SKL     ", 0x00000001)'
+7. 重新编译打过补丁后的`.dsl`文件
+	> iasl -ve -tc dsdt.dsl
+8. 到此为止，我们重新得到了新的包含S3代码的`.aml`文件，然后我们建立一个类似于`initrd`的CPIO档案，然后这段代码就可以通过GRUB在系统启动时加载上，需要将其复制到`/boot/`。这里笔者有一个疑问，这是否支持UEFI安装的Ubuntu系统呢？
+	> mkdir -p kernel/firmware/acpi
+	> cp dsdt.aml kernel/firmware/acpi
+	> find kernel | cpio -H newc --create > acpi_override
+	> sudo acpi_override /boot
+9. 告知GRUB 在启动时启动这个文件，这个需要配置 GRUB的`/boot/grub/grub.cfg`文件，再其中添加上:
+	>  initrd   /acpi_override [/initramfs-linux.img or something exits]
+　**注意**：每更新一次内核，需要重新启动这个程序
+　10. 添加启动参数在GRUB里，在文件`/etc/default/grub`里，添加一行：
+　	> GRUB_CMDLINE_LINUX_DEFAULT="quiet mem_sleep_default=deep"
+　11. 再次重启就搞定了。
+
+[这里](http://wenhan.blog/2018/06/11/Suspend-issue-on-Thinkpad-X1C-6th-with-Ubuntu-18-04/)是另一种思路的解决方案。其简单粗暴，直接命令打开笔记本不wake up.
+
+这里还有个问题是，联想官方已经更新了BIOS程序，但对于Windows和Linux用户是分别对待的，其含义是啥。可以启动Windows，也用Linux的配置吗？
+##### 关闭内存卡(memory card reader)
+> echo "2-3" | sudo tee /sys/bus/usb/drivers/usb/unbind
+##### Enabled *Thunerbolt BIOS Assist Mode*
+
+#### 电源充电阈值
+> The battery charge threshold is in the kernel now as of 4.17
+软件推荐，更好地使用和管理笔记本电池[TLP](https://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html)
+
+#### UEFI Secure Boot的作用
+ > 它无法让您正在运行的系统更健壮，也无法抵御病毒对引导器的修改。它唯一能做的就是当机器的引导器已经被病毒修改之后，给出提醒并拒绝启动，避免可能带来的进一步损失。
+### 什么是CPU降频
+为了避免笔记本的CPU满负荷工作时，机身温度升得过高，增加机器的散热压力。此时CPU会主动降频，以避免温度的升高，但这会影响笔记本本身的性能。
+### 一些有用的诊断工具
++ powertop
++ tlp
++ intel\_gpu\_top
+
+## 安装Ubuntu　系统步骤
+
+### 没有必要分swap区
+ > For new installs, a swap file will be used by default instead of a swap partition.
+ 
+ ### 安装之前在Windows 10系统中的准备工作
+ + 如果你觉得有必要，或者害怕安装系统对Windows系统有损害，可以先备份Windows文件
+ + 关闭Windows 10的快速启动
+ 这个对于使用Windows的体验是很好的，当电脑关闭后，启动的速度是非常的快的，但为了使安装后的系统能正确引导Windows系统，需要关闭Windows默认开启的快速启动，关闭方法为:
+    - 在控制面板里，打开电源选项，选择电源按钮干啥，然后改变设置，关闭快速启动
++ 压缩Windows系统，使得有剩余空间可以被Linux使用。这个就使用Windows自带的磁盘管理就可以了。
++ 关闭Windows自动更新服务
+为什么要关闭自动更新服务，是因为自动更新，可能会损坏双启动的Linux系统，这样会使得每次更新Windows后需要更新Grub启动器。况且，我也很讨厌使用一次Windows，它就会自动更新一次。这一点也挺烦人的。如何关闭Windows 自动更新
+ > `Win`+`R`，运行`services.msc`，在列表中选中自动更新即可。
+    - 关于分成几个区的问题，我们可以在Windows分成两个区，一个用来装Windows系统本身，一个用来与Linux共用的数据盘，方便两个系统交换文件等。
+
+### 烧录USB系统
+
++ 在Ubuntu官网下载18.04桌面版操作系统
++ 在Ubuntu Unity中搜索软件`Startup Disk Creator`来制作可启动USB，如果看不到该软件就可以直接在软件中心安装即可。
++ 确保U盘的容量(2G以上)，且被正确格式化
+关于这个软件，有一些Bug：
+> There are bugs that affect the Ubuntu Startup Creator, when you run it in Ubuntu versions 12.04 LTS, 14.04 LTS, 15.10 in BIOS mode and try to create USB boot drives with other versions. Some of the bugs are caused by conflicts between different versions of syslinux. These bugs do not affect installing in UEFI mode, where grub2 is used. And with the Ubuntu Startup Creator version 0.3.2 in Ubuntu 16.04 LTS, these bugs are no longer a problem, so you can install any version of the Ubuntu flavours from 16.04 LTS.
+
+所以使用16.04 LTS. 关于其它的写入软件的使用，见[这里](https://help.ubuntu.com/community/Installation/FromUSBStick).
+
