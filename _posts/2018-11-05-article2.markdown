@@ -3,6 +3,13 @@ layout: post
 title:  "UBUNTU使用"
 date:   2018-10-12 18:00:00
 categories: ubuntu linux 
+style: |
+  /* You can put any CSS here */
+  /* Just indent it with two spaces */
+  /* And don't forget the | after "style: " */
+  h2 {
+    color: red;
+  }
 ---
 
 # ssh与scp混合使用
@@ -17,4 +24,6 @@ categories: ubuntu linux
 + 图形界面打开
 > sudo nautilus # 超级用户打开
 + 卸载
-> fusermount /mnt # 弹出挂载
+> fusermount -zu /mnt # 弹出挂载
+
+## 二级标题测试
