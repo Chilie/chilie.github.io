@@ -29,10 +29,10 @@ Intersection of numerical optimization and practical applications with specific 
 `2017-`
 __Beijing Computational Science Research Center__ Postdoc (supervisor: [Prof. Hongkai Zhao](https://www.math.uci.edu/~zhao)). 
 
-`2012-2017`
+`2012-17`
 __Peking University__ Ph.D (supervisor: [Prof. Tie Zhou](dsec.pku.edu.cn/en/tzhou.htm)). Thesis is entitled _Algorithms for Phase Retrieval_.
 
-`2008-2012`
+`2008-12`
 __Sichuan University__ Undergraduate student (_First class honours_)
 
 ## Honors
@@ -66,7 +66,7 @@ Assistant for the Graduate Student Lab, with Linux skills (_Peking University, S
 `2016`
 Teaching Assistant, Introduction to Programming, Python-based (_Peking University, SMS_)
 
-`2013-2015`
+`2013-15`
 Teaching Assistant, Mathematical Analysis I, II, III (_Peking University, EECS_)
 
 ## Presentations
