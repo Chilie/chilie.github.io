@@ -1,0 +1,6 @@
+# 安装Ubuntu 18.04后需要做的二十件事情
+## 更换Gnome桌面环境为Unity
+从个人角度而言，我从Ubuntu 12.04开始使用Unity桌面环境，从内心深处喜欢和熟悉Unity桌面环境。所以我首先需要做的是把桌面环境更换为Unity。
+
+更换这个桌面环境简单，直接在终端执行
+> sudo apt-get install ubuntu-unity-desktop
