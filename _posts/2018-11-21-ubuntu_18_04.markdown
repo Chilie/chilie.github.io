@@ -1,4 +1,11 @@
-# 安装Ubuntu 18.04后需要做的二十件事情
+---
+layout: post
+title:  "安装Ubuntu 18.04后需要做的二十件事情"
+date:   2018-11-21 18:00:00
+categories: ubuntu linux 
+---
+从个人角度而言，我从Ubuntu 12.04开始使用Unity桌面环境，从内心深处喜欢和熟悉Unity桌面环境。所以我首先需要做的是把桌面环境更换为Unity。
+
 ## 更换Gnome桌面环境为Unity
 从个人角度而言，我从Ubuntu 12.04开始使用Unity桌面环境，从内心深处喜欢和熟悉Unity桌面环境。所以我首先需要做的是把桌面环境更换为Unity。
 

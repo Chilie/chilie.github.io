@@ -15,6 +15,10 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
     <!-- Customisation  -->
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+ 
+{% for css_name in page.extra_css %}
+    <link rel="stylesheet" href="{{ css_name }}">
+{% endfor %}
 
 </head>
 <body class="{% if page.post_class %}{{page.post_class}}{% else %}home-template{% endif %}">
@@ -42,7 +46,9 @@
     });
   </script>
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
+ <style type="text/css">
+{{ page.style }}
+</style>
     <!-- Google Analytics Tracking code -->
     <script type="text/javascript">
 

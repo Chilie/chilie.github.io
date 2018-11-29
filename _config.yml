@@ -7,9 +7,9 @@ highlighter: pygments
 logo: false
 paginate: 15
 baseurl: /
-domain_name: 'http://yourblog-domain.com'
+domain_name: 'http://chilie.github.io'
 google_analytics: 'UA-XXXXXXXX-X'
 plugins: [jekyll-paginate]
 # Details for the RSS feed generator
-url:            'blog url'
-author:         'Your Name'
+url:            'http://chilie.github.io'
+author:         'Ji LI'
