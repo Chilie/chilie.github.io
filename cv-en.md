@@ -10,15 +10,15 @@ Computational Mathematical Researcher
 <div id="webaddress">
 <a href="mailto:keelee@csrc.ac.cn">keelee@csrc.ac.cn</a>
 |
-<i class="fa fa-github"></i> <a href="http://github.com/blmoore">Chilie</a>
+<i class="fa fa-github"></i> <a href="https://github.com/Chilie">Chilie</a>
 |
-<i class="fa fa-twitter"></i> <a href="http://twitter.com/benjaminlmoore">Twitter</a>
+<i class="fa fa-twitter"></i> <a href="https://twitter.com/keelee05323780">Twitter</a>
 </div>
 
 <!-- -->
 ## Currently
 
-I'm a postdoc at Applied and Computational Mathematics Division in  [Beijing Computational Science Research Center](http://www.csrc.ac.cn/). Here I develop more efficient algorithms for imaging problem and machine learning applications.
+I'm currently a research fellow at Department of Mathematics in National University of Singapore. Before that I was a postdoc at Applied and Computational Mathematics Division in  [Beijing Computational Science Research Center](http://www.csrc.ac.cn/). Here I develop more efficient algorithms for imaging problem and machine learning applications.
 
 ## Interest
 
@@ -26,7 +26,11 @@ Intersection of numerical optimization and practical applications with specific 
 
 ## Education
 
-`2017-`
+`2019-`
+__National University of Singapore__ Research Fellow (supervisor: [Prof. Hui Ji](https://blog.nus.edu.sg/matjh/))
+
+
+`2017-2019`
 __Beijing Computational Science Research Center__ Postdoc (supervisor: [Prof. Hongkai Zhao](https://www.math.uci.edu/~zhao)). 
 
 `2012-17`
@@ -99,8 +103,11 @@ Numerical algorithms for generalized phase retrieval (_13th IEEE International C
 ## Publications
 
 <!-- ### Journals -->
+`2020`
+__Ji Li__, and Hongkai Zhao. _Solving Phase Retrieval via Graph Projection Splitting_. Jul. 2018. accepted by __ Inverse Problems__.
+
 `2018`
-__Ji Li__, Jian-Feng Cai and Hongkai Zhao. _Scalable Incremental Nonconvex Optimization Approach for Phase Retrieval from Minimal Measurements_. Jul. 2018. submitted to __SIAM Journal on Scientific Computing__.
+__Ji Li__, Jian-Feng Cai and Hongkai Zhao. _Scalable Incremental Nonconvex Optimization Approach for Phase Retrieval from Minimal Measurements_. Jul. 2018. accepted by __ Journal of Scientific Computing__.
 
 __Ji Li__, Jian-Feng Cai and Hongkai Zhao. _Robust Inexact Alternating Optimization for Matrix Completion with Outliers_. Sep. 2018. accepted by __Journal of Computational Mathematics__.
 
@@ -119,6 +126,8 @@ __Ji Li__ and Tie Zhou. _On Relaxed Averaged Alternating Reflections (RAAR) Algo
 Reviewer, __IEEE Transactions on Signal Processing__
 
 Reviewer, __Journal of Optics__
+
+Reviewer, __Inverse Problems__
 
 ## Technical skills
 
