@@ -30,7 +30,7 @@ Applications of supervised and/or unsupervised learning deep learning in inverse
 __National University of Singapore__ Research Fellow (supervisor: [Prof. Hui Ji](https://blog.nus.edu.sg/matjh/))
 
 
-`2017-2019`
+`2017-19`
 __Beijing Computational Science Research Center__ Postdoc (supervisor: [Prof. Hongkai Zhao](https://www.math.uci.edu/~zhao)). 
 
 `2012-17`
