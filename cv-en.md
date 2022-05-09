@@ -126,6 +126,9 @@ Weixi Wang, __Ji Li__ and Hui Ji. _$\ell_1$-norm Regularization for Short-and-sp
 
 Weixi Wang, __Ji Li__ and Hui Ji. _Self-supervised Deep Image Restoration via Adaptive Stochastic Gradient Langevin Dynamics_. __CVPR2022__.
 
+__Ji Li__, Yuesong Nan and Hui Ji. _Un-supervised Learning for Blind Image Deconvolution via Monte-Carlo Sampling_. __Inverse Problems__. 
+
+
 `2021`
 __Ji Li__. _Effective Phase Retrieval of Sparse Signals with Convergence Guarantee_. __Signal Processing__.
 
