@@ -22,7 +22,7 @@ I'm currently a research fellow at Department of Mathematics in National Univers
 
 ## Interest
 
-Intersection of numerical optimization and practical applications with specific structure. Nonconvex and convex optimization for inverse problems arising in machine learning, computer vision and imaging problem from engineer. Focus on building efficient and scalable algorithms based on the structure and connection between the original nonconvex problem and its convex relaxation formulation.
+Applications of supervised and/or unsupervised learning deep learning in inverse problems. Intersection of numerical optimization and practical applications with specific structure. Nonconvex and convex optimization for inverse problems arising in machine learning, computer vision and imaging problem from engineer. Focus on building efficient and scalable algorithms based on the structure and connection between the original nonconvex problem and its convex relaxation formulation.
 
 ## Education
 
@@ -39,13 +39,18 @@ __Peking University__ Ph.D (supervisor: [Prof. Tie Zhou](dsec.pku.edu.cn/en/tzho
 `2008-12`
 __Sichuan University__ Undergraduate student (_First class honours_)
 
-## Honors
+## Grants
 
 `2018`
 National Natural Science Foundation of China (grant No. 11801025)
 
 `2017`
 National Science Foundation for Post-doctoral Scientists of China (grant No. 2017M620589)
+
+## Honors
+
+`2021`
+[Helsinki Deblur Challenge 2021](https://www.fips.fi/HDC2021.php): the 2nd place
 
 `2017`
 Doctoral thesis: _Study of numerical algorithms for phase retrieval_
@@ -77,10 +82,17 @@ Teaching Assistant, Mathematical Analysis I, II, III (_Peking University, EECS_)
 
 ### Tutorials
 
-`2014`
-WikiProject Computational Biology half-day tutorial (_ISMB_, Boston, USA)
+`2017`
+How to write paper using bibtex and biblatex (_PKU_, Beijing, China)
+<!-- ### Journals WikiProject Computational Biology half-day tutorial (_ISMB_, Boston, USA)-->
 
 ### Talks
+
+`2021`
+Deep learning approach with conditional blur level information (_Inverse Days 2021_) 14-16 December, Tampere (online)
+
+`2019`
+Scalable incremental nonconvex optimization approach for phase retrieval (_SIAM Conference on Computational Science and Engineering_)　24-28 February, Spokane
 
 `2018`
 Scalable incremental nonconvex optimization approach for phase retrieval (_16th Conference of CSIAM_)　13-16 September, Chengdu
@@ -100,9 +112,24 @@ On the global convergence of generalized phase retrieval (_14th Conference of CS
 `2015`
 Numerical algorithms for generalized phase retrieval (_13th IEEE International Conference on Signal Processing_) 6-10 November, Chengdu
 
+## Preprints
+`2022`
+__Ji Li__, Weixi Wang, Yuesong Nan and Hui Ji. _Deep Variational EM Algorithm for Non-uniform Blind  Deblurring of Static Scene_. Submitted to __ECCV2022__.
+
+__Ji Li__, Weixi Wang, Yuesong Nan and Hui Ji. _Monte Carlo EM for Self-supervised Blind Image Deconvolution via Langevin Dynamics_. Submitted to __ECCV2022__.
+
 ## Publications
 
 <!-- ### Journals -->
+`2022`
+Weixi Wang, __Ji Li__ and Hui Ji. _$\ell_1$-norm Regularization for Short-and-sparse Blind Deconvolution: Point Source Separability and Region Selection_. __SIAM Journal on Imaging Sciences__.
+
+Weixi Wang, __Ji Li__ and Hui Ji. _Self-supervised Deep Image Restoration via Adaptive Stochastic Gradient Langevin Dynamics_. __CVPR2022__.
+
+`2021`
+__Ji Li__. _Effective Phase Retrieval of Sparse Signals with Convergence Guarantee_. __Signal Processing__.
+
+
 `2020`
 __Ji Li__, and Hongkai Zhao. _Solving Phase Retrieval via Graph Projection Splitting_. Jul. 2018. accepted by __ Inverse Problems__.
 
@@ -124,6 +151,8 @@ __Ji Li__ and Tie Zhou. _On Relaxed Averaged Alternating Reflections (RAAR) Algo
 ## Academic Service
 
 Reviewer, __IEEE Transactions on Signal Processing__
+
+Reviewer, __Mathematical Reviews__
 
 Reviewer, __Journal of Optics__
 
@@ -161,13 +190,13 @@ My [personal github account](https://github.com/chilie) hosts my hobby developme
 ## Links
 
 <!-- fa are fontawesome, ai are academicons -->
-* <i class="fa fa-envelope"></i> <a href="mailto:keelee@csrc.ac.cn">keelee@csrc.ac.cn</a><br />
+* <i class="fa fa-envelope"></i> <a href="mailto:matliji@nus.edu.sg">matliji@nus.edu.sg</a><br />
 * <i class="fa fa-github"></i> <a href="http://github.com/chilie">chilie</a><br />
-* <i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/in/blmoore/">LinkedIn</a>
-* <i class="fa fa-stack-overflow"></i> <a href="http://stackoverflow.com/users/1274516/blmoore">StackOverflow</a>
-* <i class="fa fa-wikipedia"></i> <a href="https://en.wikipedia.org/wiki/User:Ben_Moore">Wikipedia Userpage</a><br />
-* <i class="ai ai-google-scholar"></i> <a href="http://scholar.google.com/citations?user=YMxsGpsAAAAJ">Google scholar</a>
-* <i class="ai ai-orcid"></i> <a href="https://orcid.org/0000-0002-4074-1933">ORCiD</a>
+* <i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/">LinkedIn</a>
+* <i class="fa fa-stack-overflow"></i> <a href="http://stackoverflow.com/">StackOverflow</a>
+* <i class="fa fa-wikipedia"></i> <a href="https://en.wikipedia.org/">Wikipedia Userpage</a><br />
+* <i class="ai ai-google-scholar"></i> <a href="https://scholar.google.com/citations?user=utI10ZoAAAAJ">Google scholar</a>
+* <i class="ai ai-orcid"></i> <a href="https://orcid.org/0000-0001-5244-0778">ORCiD</a>
 
 ## References
 
