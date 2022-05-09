@@ -131,10 +131,10 @@ __Ji Li__. _Effective Phase Retrieval of Sparse Signals with Convergence Guarant
 
 
 `2020`
-__Ji Li__, and Hongkai Zhao. _Solving Phase Retrieval via Graph Projection Splitting_. Jul. 2018. accepted by __ Inverse Problems__.
+__Ji Li__, and Hongkai Zhao. _Solving Phase Retrieval via Graph Projection Splitting_. Jul. 2018. accepted by __Inverse Problems__.
 
 `2018`
-__Ji Li__, Jian-Feng Cai and Hongkai Zhao. _Scalable Incremental Nonconvex Optimization Approach for Phase Retrieval from Minimal Measurements_. Jul. 2018. accepted by __ Journal of Scientific Computing__.
+__Ji Li__, Jian-Feng Cai and Hongkai Zhao. _Scalable Incremental Nonconvex Optimization Approach for Phase Retrieval from Minimal Measurements_. Jul. 2018. accepted by __Journal of Scientific Computing__.
 
 __Ji Li__, Jian-Feng Cai and Hongkai Zhao. _Robust Inexact Alternating Optimization for Matrix Completion with Outliers_. Sep. 2018. accepted by __Journal of Computational Mathematics__.
 
