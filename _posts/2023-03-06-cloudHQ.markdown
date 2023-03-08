@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "Welcome to cloudHQ!"
+date:   2023-03-06 10:18:00
+categories: Skills Tools
+---
+
+# How to manage your email miragtion
+
+## Purpose
+
+I am very excited to introduce the [cloudHQ](https://www.cloudhq.net/g_suite) service, which is very useful for you if you are faced the situation. Suppose that you will leave one company, and the email service will shut down immediately when you are on the last day of the company. You want to backup the emails under your account.
+
+## One possible solution
+
+I am actually in this situation. I google the solution and want to try some suggestion. In my company, we are using the outlook email service and I check the email in the Outlook desktop software. There is an "export" function we can use to download the `.pst` file, which contains all the email data under your account. Then you can "import" the file to another email account. Though this approach looks possible, but for me, I want to directly "copy" the emails from one account to another account, such that I can check the email using the web.
+
+## Your choice 
+
+I find that [cloudHQ](https://www.cloudhq.net/g_suite) service is very suitable for my request. The service can transfer the emails to another email service, such as gmail. The only thing I need to do is to open a new email account, such as Gmail account. Of course, if you satisfy mixing the emails with your existing account, it is not necessary to open a new email account.
+
+Then, you go to the cloudHQ and configure the setting of the email migration. In this process, you just click the button, fill up your email account and allow cloudHQ to access your accounts. After you connect the two email accounts. It's well done and we can close the webpage. It may take several times to complete the transfer. After the transfer is done, you will check the email in the new account. It's very perfect.
+
+If you encounter this situation, you must to have a try the cloudHQ service. It will save your life.
+
+
+
